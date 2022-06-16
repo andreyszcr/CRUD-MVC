@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Inventarios.Proveedores>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<h3>
+    @Html.ActionLink("Nuevo Proveedor", "Create")
+</h3>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.cedula)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.direccion)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.telefono)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+@foreach (var item in Model) {
+    <tr>
+        <td scope="row">
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td scope="row">
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td scope="row">
+            @Html.DisplayFor(modelItem => item.cedula)
+        </td>
+        <td scope="row">
+            @Html.DisplayFor(modelItem => item.direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td scope="row">
+            @Html.ActionLink("Edit", "Edit", new { id=item.CodigoProveedor }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CodigoProveedor }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CodigoProveedor })
+        </td>
+    </tr>
+}
+
+</table>

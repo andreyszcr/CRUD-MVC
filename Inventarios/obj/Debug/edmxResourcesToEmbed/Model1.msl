@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InventarioModelStoreContainer" CdmEntityContainer="InventarioEntities">
+    <EntitySetMapping Name="Articulos">
+      <EntityTypeMapping TypeName="InventarioModel.Articulos">
+        <MappingFragment StoreEntitySet="Articulos">
+          <ScalarProperty Name="IdArticulo" ColumnName="IdArticulo" />
+          <ScalarProperty Name="CodigoArticulos" ColumnName="CodigoArticulos" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="costo" ColumnName="costo" />
+          <ScalarProperty Name="CodigoProveedor" ColumnName="CodigoProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedores">
+      <EntityTypeMapping TypeName="InventarioModel.Proveedores">
+        <MappingFragment StoreEntitySet="Proveedores">
+          <ScalarProperty Name="CodigoProveedor" ColumnName="CodigoProveedor" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ActualizarProveedores" FunctionName="InventarioModel.Store.ActualizarProveedores" />
+    <FunctionImportMapping FunctionImportName="DesactivarProveedores" FunctionName="InventarioModel.Store.DesactivarProveedores" />
+    <FunctionImportMapping FunctionImportName="InsertarProveedores" FunctionName="InventarioModel.Store.InsertarProveedores" />
+    <FunctionImportMapping FunctionImportName="ObtenerListado" FunctionName="InventarioModel.Store.ObtenerListado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InventarioModel.ObtenerListado_Result">
+          <ScalarProperty Name="CodigoArticulos" ColumnName="CodigoArticulos" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="costo" ColumnName="costo" />
+          <ScalarProperty Name="CodigoProveedor" ColumnName="CodigoProveedor" />
+          <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ActualizarArticulos" FunctionName="InventarioModel.Store.ActualizarArticulos" />
+    <FunctionImportMapping FunctionImportName="DesactivarArticulos" FunctionName="InventarioModel.Store.DesactivarArticulos" />
+    <FunctionImportMapping FunctionImportName="InsertarArticulos" FunctionName="InventarioModel.Store.InsertarArticulos" />
+  </EntityContainerMapping>
+</Mapping>
